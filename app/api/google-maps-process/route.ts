@@ -286,7 +286,7 @@ async function updateGoogleMapsRecord(recordId: number, data: any, metabaseId?: 
         console.error(`   Error details: ${errorText}`);
         
         // Análisis específico del error
-        analyzeSupabaseError(errorText, sanitizedData, recordId);
+        analyzeSupabaseError(errorText, sanitizedData, recordId.toString());
         
         return false;
       }
