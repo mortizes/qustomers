@@ -18,12 +18,18 @@ export async function POST(request: NextRequest) {
       totalRecords: recordIds.length,
       foundRecords: 0,
       notFoundRecords: 0,
-      dataIssues: [],
+      dataIssues: [] as Array<{
+        recordId: any;
+        name: any;
+        status: number;
+        error: string;
+        problematicFields: string[];
+      }>,
       commonProblems: {
-        missingFields: [],
-        invalidTypes: [],
-        longStrings: [],
-        invalidJson: []
+        missingFields: [] as any[],
+        invalidTypes: [] as any[],
+        longStrings: [] as any[],
+        invalidJson: [] as any[]
       }
     };
 
