@@ -183,7 +183,7 @@ async function getCustomerData(pendingRecords: GoogleMapsPendingRecord[]): Promi
     
     if (recordsWithCustomerId.length > 0) {
             // Obtener todos los customer IDs únicos
-      const customerIds = [...new Set(recordsWithCustomerId.map(r => r.metabase_id))];
+      const customerIds = Array.from(new Set(recordsWithCustomerId.map(r => r.metabase_id)));
       console.log(`🔍 Buscando ${customerIds.length} customers únicos por ID...`);
       console.log('🔍 IDs únicos a buscar:', customerIds.slice(0, 10));
       
@@ -246,7 +246,7 @@ async function getCustomerData(pendingRecords: GoogleMapsPendingRecord[]): Promi
       
       if (recordsWithName.length > 0) {
         const names = recordsWithName.map(r => r.name!);
-        const uniqueNames = [...new Set(names)];
+        const uniqueNames = Array.from(new Set(names));
         
         console.log(`📋 Buscando ${uniqueNames.length} nombres únicos en customers...`);
         console.log('🔍 Primeros 5 nombres a buscar:', uniqueNames.slice(0, 5));
