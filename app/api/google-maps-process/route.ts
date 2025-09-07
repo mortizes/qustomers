@@ -395,7 +395,7 @@ export async function POST(request: NextRequest) {
       }
       
       // 2. Verificar registros que ya tienen place_id en google_maps (ya completados)
-      const metabaseIds = recordsToProcess.map((r: any) => r.metabase_id).filter(id => id);
+      const metabaseIds = recordsToProcess.map((r: any) => r.metabase_id).filter((id: any) => id);
       if (metabaseIds.length > 0) {
         const orConditions = metabaseIds.map(id => `metabase_id.eq.${id}`).join(',');
         const checkUrl = `${baseUrl}/rest/v1/google_maps?or=(${orConditions})&select=metabase_id,place_id`;
