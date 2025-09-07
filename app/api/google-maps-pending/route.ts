@@ -212,7 +212,7 @@ async function getCustomerData(pendingRecords: GoogleMapsPendingRecord[]): Promi
           console.log(`📦 Lote ${Math.floor(i / batchSize) + 1}: ${customers.length} customers encontrados`);
           
           if (customers.length > 0) {
-            console.log('📝 Primeros 3 customers encontrados:', customers.slice(0, 3).map(c => ({ id: c.id, name: c.name, city: c.city })));
+            console.log('📝 Primeros 3 customers encontrados:', customers.slice(0, 3).map((c: any) => ({ id: c.id, name: c.name, city: c.city })));
           }
           
           // Mapear customers con los registros pendientes usando metabase_id
@@ -276,7 +276,7 @@ async function getCustomerData(pendingRecords: GoogleMapsPendingRecord[]): Promi
             console.log(`📦 Lote ${Math.floor(i / batchSize) + 1}: ${customers.length} customers encontrados`);
             
             if (customers.length > 0) {
-              console.log('📝 Primeros 3 customers encontrados:', customers.slice(0, 3).map(c => ({ id: c.id, name: c.name, city: c.city })));
+              console.log('📝 Primeros 3 customers encontrados:', customers.slice(0, 3).map((c: any) => ({ id: c.id, name: c.name, city: c.city })));
             }
             
             // Mapear customers con los registros pendientes
