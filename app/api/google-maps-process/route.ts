@@ -207,7 +207,7 @@ async function updateGoogleMapsRecord(recordId: number, data: any, metabaseId?: 
     // 0. Validar y sanitizar los datos antes de enviar a Supabase
     console.log(`🔍 Validando datos para registro ${recordId}...`);
     const validation = validateGoogleMapsData(updateData);
-    logValidationResults(recordId, validation, updateData);
+    logValidationResults(recordId.toString(), validation, updateData);
     
     if (!validation.isValid) {
       console.error(`❌ Datos inválidos para registro ${recordId}:`, validation.errors);
